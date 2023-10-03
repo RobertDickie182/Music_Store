@@ -17,4 +17,39 @@ public class GuitarTest {
     public void hasModel() {
         assertEquals("Fender", guitar.getModel());
     }
+
+    @Test
+    public void hasColour() {
+        assertEquals("Red", guitar.getColour());
+    }
+
+    @Test
+    public void hasNumberOfStrings() {
+        assertEquals(6, guitar.getNumberOfStrings());
+    }
+
+    @Test
+    public void hasType() {
+        assertEquals("String", guitar.getType());
+    }
+
+    @Test
+    public void hasCostPrice() {
+        assertEquals(300, guitar.getCostPrice());
+    }
+
+    @Test
+    public void hasRetailPrice() {
+        assertEquals(500, guitar.getRetailPrice());
+    }
+
+    @Test
+    public void canPlay() {
+        assertEquals("Kerrang!!!", guitar.play());
+    }
+
+    @Test
+    public void canGetMarkup() {
+        assertEquals(200, guitar.caluculateMarkup());
+    }
 }
