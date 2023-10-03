@@ -9,7 +9,7 @@ public class Piano extends Instrument implements ISell, IPlay {
     private int buyPrice;
     private int sellPrice;
 
-    public Piano(String colour, String type, String manufacturer, int buyPrice, int sellPrice) {
+    public Piano(String colour, String manufacturer, int buyPrice, int sellPrice) {
         super(colour, "Keyboard");
         this.manufacturer = manufacturer;
         this.buyPrice = buyPrice;
@@ -31,5 +31,9 @@ public class Piano extends Instrument implements ISell, IPlay {
     @Override
     public String play() {
         return "Plink Plonk";
+    }
+
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
     }
 }
