@@ -3,18 +3,16 @@ package MusicShop;
 import Behaviours.IPlay;
 import Behaviours.ISell;
 
-public class Guitar extends Instrument implements IPlay, ISell {
+public class Guitar extends Instrument {
     private String model;
     private int numberOfStrings;
-    private int costPrice;
-    private int retailPrice;
 
-    public Guitar(String colour, String model, int numberOfStrings, int costPrice, int retailPrice) {
-        super(colour, "String");
+
+    public Guitar(String colour, String model, int numberOfStrings, int buyPrice, int sellPrice) {
+        super(colour, InstrumentType.STRING, buyPrice, sellPrice);
         this.model = model;
         this.numberOfStrings = numberOfStrings;
-        this.costPrice = costPrice;
-        this.retailPrice = retailPrice;
+
     }
 
     public String getModel() {
@@ -26,11 +24,11 @@ public class Guitar extends Instrument implements IPlay, ISell {
     }
 
     public int getCostPrice() {
-        return costPrice;
+        return buyPrice;
     }
 
     public int getRetailPrice() {
-        return retailPrice;
+        return sellPrice;
     }
 
     @Override
@@ -38,7 +36,7 @@ public class Guitar extends Instrument implements IPlay, ISell {
         return "Kerrang!!!";
     }
 
-    public int caluculateMarkup() {
-        return retailPrice - costPrice;
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
     }
 }

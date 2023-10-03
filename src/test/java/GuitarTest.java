@@ -1,4 +1,5 @@
 import MusicShop.Guitar;
+import MusicShop.InstrumentType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,7 +31,7 @@ public class GuitarTest {
 
     @Test
     public void hasType() {
-        assertEquals("String", guitar.getType());
+        assertEquals(InstrumentType.STRING, guitar.getType());
     }
 
     @Test
@@ -50,6 +51,6 @@ public class GuitarTest {
 
     @Test
     public void canGetMarkup() {
-        assertEquals(200, guitar.caluculateMarkup());
+        assertEquals(200, guitar.calculateMarkup());
     }
 }

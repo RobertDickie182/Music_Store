@@ -1,3 +1,4 @@
+import MusicShop.InstrumentType;
 import MusicShop.Piano;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class PianoTest {
 
     @Test
     public void hasType() {
-        assertEquals("Keyboard", piano.getType());
+        assertEquals(InstrumentType.KEYBOARD, piano.getType());
     }
 
     @Test

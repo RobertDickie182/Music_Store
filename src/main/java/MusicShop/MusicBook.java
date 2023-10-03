@@ -2,28 +2,19 @@ package MusicShop;
 
 import Behaviours.ISell;
 
-public class MusicBook implements ISell {
+public class MusicBook extends StockItem {
     private String title;
-    private int buyPrice;
-    private int sellPrice;
 
     public MusicBook(String title, int buyPrice, int sellPrice) {
+        super(buyPrice, sellPrice);
         this.title = title;
-        this.buyPrice = buyPrice;
-        this.sellPrice = sellPrice;
+
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getBuyPrice() {
-        return buyPrice;
-    }
-
-    public int getSellPrice() {
-        return sellPrice;
-    }
 
     public int calculateMarkup() {
         return sellPrice - buyPrice;

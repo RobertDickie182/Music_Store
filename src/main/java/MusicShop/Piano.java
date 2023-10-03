@@ -1,32 +1,20 @@
 package MusicShop;
 
-import Behaviours.IPlay;
-import Behaviours.ISell;
 
-public class Piano extends Instrument implements ISell, IPlay {
+public class Piano extends Instrument {
 
     private String manufacturer;
-    private int buyPrice;
-    private int sellPrice;
 
     public Piano(String colour, String manufacturer, int buyPrice, int sellPrice) {
-        super(colour, "Keyboard");
+        super(colour, InstrumentType.KEYBOARD, buyPrice, sellPrice);
         this.manufacturer = manufacturer;
-        this.buyPrice = buyPrice;
-        this.sellPrice = sellPrice;
     }
+
 
     public String getManufacturer() {
         return manufacturer;
     }
 
-    public int getBuyPrice() {
-        return buyPrice;
-    }
-
-    public int getSellPrice() {
-        return sellPrice;
-    }
 
     @Override
     public String play() {

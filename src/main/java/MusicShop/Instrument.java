@@ -1,12 +1,15 @@
 package MusicShop;
 
-public abstract class Instrument {
+import Behaviours.IPlay;
+
+public abstract class Instrument extends StockItem implements IPlay {
 
     private String colour;
 
-    private String type;
+    private InstrumentType type;
 
-    public Instrument(String colour, String type) {
+    public Instrument(String colour, InstrumentType type, int buyPrice, int sellPrice) {
+        super(buyPrice, sellPrice);
         this.colour = colour;
         this.type = type;
     }
@@ -15,7 +18,7 @@ public abstract class Instrument {
         return colour;
     }
 
-    public String getType() {
+    public InstrumentType getType() {
         return type;
     }
 }

@@ -1,6 +1,5 @@
 import Behaviours.ISell;
-import MusicShop.MusicBook;
-import MusicShop.Shop;
+import MusicShop.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,12 +8,18 @@ import static org.junit.Assert.assertEquals;
 public class ShopTest {
 
     Shop shop;
-    ISell item;
+    ISell book;
+    ISell guitar;
+    ISell piano;
+    ISell stand;
 
     @Before
     public void before(){
         shop = new Shop("Andy's Music Centre");
-        item = new MusicBook("Guitar for dummies", 10, 15);
+        book = new MusicBook("Guitar for dummies", 10, 15);
+        guitar = new Guitar("red","Gibson",6, 300, 500 );
+        piano = new Piano("black", "Casio", 800, 1000);
+        stand = new MusicStand("silver", 50, 70);
     }
 
     @Test
@@ -29,13 +34,22 @@ public class ShopTest {
 
     @Test
     public void canAddToStock() {
-        shop.addToStock(item);
+        shop.addToStock(book);
         assertEquals(1, shop.stockCount());
     }
 
     @Test
     public void canRemoveFromStock() {
-        shop.removeFromStock(item);
+        shop.removeFromStock(book);
         assertEquals(0,shop.stockCount());
+    }
+
+    @Test
+    public void canGetTotalPotentialProfit() {
+        shop.addToStock(book);
+        shop.addToStock(guitar);
+        shop.addToStock(piano);
+        shop.addToStock(stand);
+        assertEquals(425, shop.totalPotentialProfit());
     }
 }
