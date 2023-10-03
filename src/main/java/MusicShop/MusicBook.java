@@ -24,4 +24,8 @@ public class MusicBook implements ISell {
     public int getSellPrice() {
         return sellPrice;
     }
+
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
+    }
 }

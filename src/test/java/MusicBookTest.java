@@ -21,4 +21,14 @@ public class MusicBookTest {
     public void hasBuyPrice() {
         assertEquals(10, musicBook.getBuyPrice());
     }
+
+    @Test
+    public void hasSellPrice() {
+        assertEquals(10, musicBook.getBuyPrice());
+    }
+
+    @Test
+    public void canGetMarkup() {
+        assertEquals(20, musicBook.calculateMarkup());
+    }
 }
