@@ -24,4 +24,8 @@ public class MusicStand implements ISell {
     public int getSellPrice() {
         return sellPrice;
     }
+
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
+    }
 }
